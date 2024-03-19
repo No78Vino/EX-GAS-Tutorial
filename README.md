@@ -59,10 +59,104 @@
   -  ![QQ20240319143346.png](DocumentImage%2FQQ20240319143346.png)
   
 ## 4.制作游戏场景
+直接使用默认的SampleScene作为场景。
+简单铺设一个封闭的场景，用于测试角色的移动和射击，添加5个Square拉伸成地板和墙面。
+其中Background为地板，无碰撞；Wall元素持有碰撞盒。
 
+![QQ20240319162512.png](DocumentImage%2FQQ20240319162512.png)
 
 ## 5.创建UI
+UI从简，不使用图片资源。只使用Text，Image，Button制作UI。
+UI只有两部分：游戏主界面的玩家状态栏， 结算界面。
 
+排版如下：图中HP,Score,SweepCD为Text；StateBar,ResultWindow为纯色Image；ButtonRetry为Button
+
+![QQ20240319170027.png](DocumentImage%2FQQ20240319170027.png)
+
+![QQ20240319170111.png](DocumentImage%2FQQ20240319170111.png)
+### 5.1 UI脚本的编写
+> 因为案例的UI足够简单，所以UI的逻辑会很粗暴。
+
+首先在Assets/Scripts目录下创建UIManager脚本。然后将其挂载到Scene的Canvas物体上。
+
+![QQ20240319171312.png](DocumentImage%2FQQ20240319171312.png)
+
+接下来编写UIManager逻辑。
+- 把几个需要用到的UI组件进行序列化
+  - > [SerializeField] private Text hp;
+- UIManager为了方便调用，我们为他添加静态单例
+  - ```
+    private static UIManager _instance;
+    public static UIManager Instance => _instance;
+    private void Awake(){_instance = this;}
+    ``` 
+- 暴露有可能发生变化的UI组件的修改接口。
+  - 比如： 
+    > public void SetHp(int hpValue){ hp.text = $"HP: {hpValue}/100"; } 
+- 【再来一局】的接口
+  - > public void Retry(); //具体逻辑下文会实现
+
+最后UIManager的脚本如下：
+```
+using UnityEngine;
+using UnityEngine.UI;
+
+public class UIManager : MonoBehaviour
+{
+    [SerializeField] private Text hp;
+    [SerializeField] private Text score;
+    [SerializeField] private Text sweepCd;
+    
+    [SerializeField] private GameObject resultWindow;
+    [SerializeField] private Text resultWindowScore;
+
+    private static UIManager _instance;
+    public static UIManager Instance => _instance;
+
+    private void Awake()
+    {
+        _instance = this;
+    }
+
+    public void SetHp(int hpValue)
+    {
+        hp.text = $"HP: {hpValue}/100";
+    }
+    
+    public void SetScore(int scoreValue)
+    {
+        score.text = $"Score: {scoreValue}";
+        resultWindowScore.text = $"Score: {scoreValue}";
+    }
+
+    public void SetSweepCd(float cd)
+    {
+        sweepCd.text = $"横扫CD: {cd}";
+    }
+
+    public void ShowResultWindow()
+    {
+        resultWindow.SetActive(true);
+    }
+    
+    public void HideResultWindow()
+    {
+        resultWindow.SetActive(false);
+    }
+
+    public void Retry()
+    {
+        // TODO 重置游戏状态，下文会继续实现
+    }
+}
+```
+编辑完后，记得把对应的UI组件拖到UIManager的对应字段上。
+- ![QQ20240319174137.png](DocumentImage%2FQQ20240319174137.png)
+- ![QQ20240319174201.png](DocumentImage%2FQQ20240319174201.png)
+
+UI的内容先告一段落，后续还会沿着案例开发顺序对UIManager进行补充。
+
+---
 ## 6.使用EX-GAS
 
 ## 7.
