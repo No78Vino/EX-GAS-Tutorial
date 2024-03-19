@@ -6,23 +6,21 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Text hp;
     [SerializeField] private Text score;
     [SerializeField] private Text sweepCd;
-    
+
     [SerializeField] private GameObject resultWindow;
     [SerializeField] private Text resultWindowScore;
-
-    private static UIManager _instance;
-    public static UIManager Instance => _instance;
+    public static UIManager Instance { get; private set; }
 
     private void Awake()
     {
-        _instance = this;
+        Instance = this;
     }
 
     public void SetHp(int hpValue)
     {
         hp.text = $"HP: {hpValue}/100";
     }
-    
+
     public void SetScore(int scoreValue)
     {
         score.text = $"Score: {scoreValue}";
@@ -38,7 +36,7 @@ public class UIManager : MonoBehaviour
     {
         resultWindow.SetActive(true);
     }
-    
+
     public void HideResultWindow()
     {
         resultWindow.SetActive(false);
