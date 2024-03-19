@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.exhard.exgas": {
+      "version": "https://github.com/No78Vino/gameplay-ability-system-for-unity.git?path=Assets/GAS",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "50d0070f6d0184ae1affaa5861db5bf8795ef4f9"
+    },
     "com.unity.2d.animation": {
       "version": "9.1.0",
       "depth": 1,
