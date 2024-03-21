@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: GASSettingAsset
   m_EditorClassIdentifier: 
   CodeGeneratePath: Assets/Scripts/Gen
-  GASConfigAssetPath: Assets/Config/GAS
+  GASConfigAssetPath: Assets/GAS/Config

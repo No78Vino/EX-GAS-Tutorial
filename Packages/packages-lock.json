@@ -8,11 +8,11 @@
       "hash": "50d0070f6d0184ae1affaa5861db5bf8795ef4f9"
     },
     "com.unity.2d.animation": {
-      "version": "9.1.0",
+      "version": "9.0.4",
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.2d.common": "8.0.2",
+        "com.unity.2d.common": "8.0.1",
         "com.unity.2d.sprite": "1.0.0",
         "com.unity.collections": "1.1.0",
         "com.unity.modules.animation": "1.0.0",
@@ -21,7 +21,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.2d.aseprite": {
-      "version": "1.1.1",
+      "version": "1.0.1",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -53,11 +53,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.2d.psdimporter": {
-      "version": "8.0.4",
+      "version": "8.0.3",
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.2d.animation": "9.1.0",
+        "com.unity.2d.animation": "9.0.4",
         "com.unity.2d.common": "8.0.2",
         "com.unity.2d.sprite": "1.0.0"
       },
@@ -102,12 +102,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.burst": {
-      "version": "1.8.12",
+      "version": "1.8.11",
       "depth": 3,
       "source": "registry",
       "dependencies": {
-        "com.unity.mathematics": "1.2.1",
-        "com.unity.modules.jsonserialize": "1.0.0"
+        "com.unity.mathematics": "1.2.1"
       },
       "url": "https://packages.unity.com"
     },
@@ -140,14 +139,14 @@
       "depth": 0,
       "source": "builtin",
       "dependencies": {
-        "com.unity.2d.animation": "9.1.0",
+        "com.unity.2d.animation": "9.0.4",
         "com.unity.2d.pixel-perfect": "5.0.3",
-        "com.unity.2d.psdimporter": "8.0.4",
+        "com.unity.2d.psdimporter": "8.0.3",
         "com.unity.2d.sprite": "1.0.0",
         "com.unity.2d.spriteshape": "9.0.2",
         "com.unity.2d.tilemap": "1.0.0",
         "com.unity.2d.tilemap.extras": "3.1.2",
-        "com.unity.2d.aseprite": "1.1.1"
+        "com.unity.2d.aseprite": "1.0.1"
       }
     },
     "com.unity.ide.rider": {

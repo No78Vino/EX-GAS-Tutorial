@@ -1,14 +1,18 @@
-﻿public class GameManager
-{
-    private static GameManager _intance;
+﻿using System;
+using UnityEngine;
 
-    public static GameManager Instance
+public class GameRunner: MonoBehaviour
+{
+    public static GameRunner Instance { get; private set; }
+
+    private void Awake()
     {
-        get
-        {
-            if (_intance == null) _intance = new GameManager();
-            return _intance;
-        }
+        Instance = this;
+    }
+
+    private void Start()
+    {
+        WaitForFirstGameStart();
     }
 
     public void WaitForFirstGameStart()
