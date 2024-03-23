@@ -44,6 +44,7 @@ public class UIManager : MonoBehaviour
 
     public void Retry()
     {
-        // TODO 重置游戏状态，下文会继续实现
+        // 重置游戏状态
+        GameRunner.Instance.StartGame();
     }
 }

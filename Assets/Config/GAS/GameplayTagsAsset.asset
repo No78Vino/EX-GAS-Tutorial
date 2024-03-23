@@ -16,12 +16,145 @@ MonoBehaviour:
   - _id: 1
     _name: Root
     _depth: -1
+  - _id: 15
+    _name: Faction
+    _depth: 0
+  - _id: 16
+    _name: Player
+    _depth: 1
+  - _id: 17
+    _name: Enemy
+    _depth: 1
+  - _id: 3
+    _name: State
+    _depth: 0
+  - _id: 5
+    _name: Buff
+    _depth: 1
+  - _id: 4
+    _name: Debuff
+    _depth: 1
+  - _id: 7
+    _name: Cold
+    _depth: 2
+  - _id: 6
+    _name: Burning
+    _depth: 2
   - _id: 2
     _name: Ability
     _depth: 0
+  - _id: 10
+    _name: Bomb
+    _depth: 1
+  - _id: 9
+    _name: Sweep
+    _depth: 1
+  - _id: 8
+    _name: Fire
+    _depth: 1
+  - _id: 11
+    _name: Event
+    _depth: 0
+  - _id: 12
+    _name: Moving
+    _depth: 1
+  - _id: 13
+    _name: CD
+    _depth: 0
+  - _id: 14
+    _name: Sweep
+    _depth: 1
   Tags:
+  - _name: Faction
+    _hashCode: -168968830
+    _shortName: Faction
+    _ancestorHashCodes: 
+    _ancestorNames: []
+  - _name: Faction.Player
+    _hashCode: 1030057057
+    _shortName: Player
+    _ancestorHashCodes: 82bdedf5
+    _ancestorNames:
+    - Faction
+  - _name: Faction.Enemy
+    _hashCode: -1091112840
+    _shortName: Enemy
+    _ancestorHashCodes: 82bdedf5
+    _ancestorNames:
+    - Faction
+  - _name: State
+    _hashCode: 1695958603
+    _shortName: State
+    _ancestorHashCodes: 
+    _ancestorNames: []
+  - _name: State.Buff
+    _hashCode: 743086286
+    _shortName: Buff
+    _ancestorHashCodes: 4b461665
+    _ancestorNames:
+    - State
+  - _name: State.Debuff
+    _hashCode: -1227811357
+    _shortName: Debuff
+    _ancestorHashCodes: 4b461665
+    _ancestorNames:
+    - State
+  - _name: State.Debuff.Cold
+    _hashCode: 202012689
+    _shortName: Cold
+    _ancestorHashCodes: 4b461665e315d1b6
+    _ancestorNames:
+    - State
+    - State.Debuff
+  - _name: State.Debuff.Burning
+    _hashCode: -357927080
+    _shortName: Burning
+    _ancestorHashCodes: 4b461665e315d1b6
+    _ancestorNames:
+    - State
+    - State.Debuff
   - _name: Ability
     _hashCode: -523153736
     _shortName: Ability
     _ancestorHashCodes: 
     _ancestorNames: []
+  - _name: Ability.Bomb
+    _hashCode: -337865218
+    _shortName: Bomb
+    _ancestorHashCodes: b84ed1e0
+    _ancestorNames:
+    - Ability
+  - _name: Ability.Sweep
+    _hashCode: 1540976138
+    _shortName: Sweep
+    _ancestorHashCodes: b84ed1e0
+    _ancestorNames:
+    - Ability
+  - _name: Ability.Fire
+    _hashCode: -1702436198
+    _shortName: Fire
+    _ancestorHashCodes: b84ed1e0
+    _ancestorNames:
+    - Ability
+  - _name: Event
+    _hashCode: 667645442
+    _shortName: Event
+    _ancestorHashCodes: 
+    _ancestorNames: []
+  - _name: Event.Moving
+    _hashCode: 798883614
+    _shortName: Moving
+    _ancestorHashCodes: 0276cb27
+    _ancestorNames:
+    - Event
+  - _name: CD
+    _hashCode: -1137859925
+    _shortName: CD
+    _ancestorHashCodes: 
+    _ancestorNames: []
+  - _name: CD.Sweep
+    _hashCode: -303359587
+    _shortName: Sweep
+    _ancestorHashCodes: aba22dbc
+    _ancestorNames:
+    - CD

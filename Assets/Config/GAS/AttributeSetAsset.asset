@@ -13,4 +13,12 @@ MonoBehaviour:
   m_Name: AttributeSetAsset
   m_EditorClassIdentifier: 
   ERROR_DuplicatedAttributeSet: 
-  AttributeSetConfigs: []
+  AttributeSetConfigs:
+  - Name: Fight
+    AttributeNames:
+    - HP
+    - Speed
+    - Atk
+  - Name: Bullet
+    AttributeNames:
+    - Atk

@@ -9,8 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bf62a9aa7db48b38f37313afe3e6ef5, type: 3}
-  m_Name: GASSettingAsset
+  m_Script: {fileID: 11500000, guid: c712e05924784c5593896e5c7c1d2708, type: 3}
+  m_Name: Attr_Bullet_Atk
   m_EditorClassIdentifier: 
-  CodeGeneratePath: Assets/Scripts/Gen
-  GASConfigAssetPath: Assets/Config/GAS
+  attributeName: AS_Bullet.Atk
+  attributeSetName: AS_Bullet
+  attributeShortName: Atk
+  attributeFromType: 0
+  captureType: 0
+  k: -1
+  b: 0

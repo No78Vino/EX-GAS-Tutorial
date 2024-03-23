@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: AttributeAsset
   m_EditorClassIdentifier: 
   Warning_DuplicatedAttribute: 
-  attributes: []
+  attributes:
+  - Name: HP
+  - Name: Speed
+  - Name: Atk
