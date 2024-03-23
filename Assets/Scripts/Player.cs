@@ -18,8 +18,7 @@ public class Player : MonoBehaviour
         _input.Enable();
         _input.Player.Move.performed += OnActivateMove;
         _input.Player.Move.canceled += OnDeactivateMove;
-        _input.Player.Fire.performed += OnActivateFire;
-        _input.Player.Fire.canceled += OnDeactivateFire;
+        _input.Player.Fire.performed += OnFire;
         _input.Player.Sweep.performed += OnSweep;
     }
 
@@ -28,23 +27,12 @@ public class Player : MonoBehaviour
         _input.Disable();
         _input.Player.Move.performed -= OnActivateMove;
         _input.Player.Move.canceled -= OnDeactivateMove;
-        _input.Player.Fire.performed -= OnActivateFire;
-        _input.Player.Fire.canceled -= OnDeactivateFire;
+        _input.Player.Fire.performed -= OnFire;
         _input.Player.Sweep.performed -= OnSweep;
+        
+        _asc.AttrSet<AS_Fight>().HP.UnregisterPostBaseValueChange(OnHpChange);
     }
 
-    void OnEnable()
-    {
-        // _asc.AttrSet<AS_Fight>().HP.RegisterPostBaseValueChange(OnHpChange);
-        // _asc.AttrSet<AS_Fight>().POSTURE.RegisterPostBaseValueChange(OnPostureChange);
-    }
-
-     void OnDisable()
-    {
-        // _asc.AttrSet<AS_Fight>().HP.UnregisterPostBaseValueChange(OnHpChange);
-        // _asc.AttrSet<AS_Fight>().POSTURE.UnregisterPostBaseValueChange(OnPostureChange);
-    }
-     
     // Update is called once per frame
     void Update()
     {
@@ -58,43 +46,52 @@ public class Player : MonoBehaviour
 
     public void Init()
     {
-        // _asc.
+        _asc.InitWithPreset(1);
         InitAttribute();
     }
     
     void InitAttribute()
     {
-        // TODO  初始化属性 
+        _asc.AttrSet<AS_Fight>().InitHP(100);
+        _asc.AttrSet<AS_Fight>().InitAtk(10);
+        _asc.AttrSet<AS_Fight>().InitSpeed(8);
+        
+        _asc.AttrSet<AS_Fight>().HP.RegisterPostBaseValueChange(OnHpChange);
     }
     
     void OnActivateMove(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        // 移动
         var move = context.ReadValue<Vector2>();
         var velocity = _rb.velocity;
         velocity.x = move.x;
         velocity.y = move.y;
-        velocity = velocity.normalized * 5;
+        velocity = velocity.normalized * _asc.AttrSet<AS_Fight>().Speed.CurrentValue;
         _rb.velocity = velocity;
     }
     
     void OnDeactivateMove(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        // 停止移动
         _rb.velocity = Vector2.zero;
     }
     
-    void OnActivateFire(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    void OnFire(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        // TODO 开火
+        _asc.TryActivateAbility(GAbilityLib.Fire_Info.Name);
     }
     
-    void OnDeactivateFire(UnityEngine.InputSystem.InputAction.CallbackContext context)
-    {
-        // TODO 停止开火
-    }
     void OnSweep(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
         // TODO 横扫
+    }
+    
+    void OnHpChange(AttributeBase attributeBase,float oldValue, float newValue)
+    {
+        UIManager.Instance.SetHp((int)newValue);
+        
+        if (newValue <= 0)
+        {
+            // TODO 死亡
+            // _asc.TryActivateAbility(GAbilityLib.Die_Info.Name);
+        }
     }
 }

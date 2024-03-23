@@ -4,30 +4,43 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D),typeof(AbilitySystemComponent))]
 public class Bullet : MonoBehaviour
 {
+    [SerializeField] private GameplayEffectAsset geBulletDamage;
     private AbilitySystemComponent _asc;
     private Rigidbody2D _rb;
-
+    private GameplayEffect _geBulletDamage;
+    
     private void Awake()
     {
         _asc = gameObject.GetComponent<AbilitySystemComponent>();
         _rb = gameObject.GetComponent<Rigidbody2D>();
+        _geBulletDamage = new GameplayEffect(geBulletDamage);
     }
 
-    public void Init(Vector2 position, float rotation, float speed, int damage)
+    public void Init(Vector2 position, Vector2 direction, float speed, float damage)
     {
-        // TODO 设置出生点，方向，速度
+        // 设置出生点，速度
         transform.position = position;
-        transform.localEulerAngles = new Vector3(0, 0, rotation);
-        _rb.velocity = transform.up * speed;
+        _rb.velocity = direction * speed;
         
-        // TODO 设置伤害
+        // 设置伤害
+        _asc.InitWithPreset(1);
+        _asc.AttrSet<AS_Bullet>().InitAtk(damage);
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        // TODO 伤害计算
-        
-        // 销毁自己
-        Destroy(gameObject);
+        // 伤害生效
+        if(other.gameObject.TryGetComponent(out AbilitySystemComponent enemy))
+        {
+            if (enemy.HasTag(GTagLib.Faction_Enemy))
+            {
+                _asc.ApplyGameplayEffectTo(_geBulletDamage, enemy);
+                Destroy(gameObject);
+            }
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }

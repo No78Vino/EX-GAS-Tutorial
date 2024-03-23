@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9395a0be3e547f48bd1c8320edc6c58, type: 3}
   m_Name: GE_SweepDamage
   m_EditorClassIdentifier: 
-  Name: 
+  Name: "\u6A2A\u626B\u4F24\u5BB3"
   Description: 
   DurationPolicy: 1
   Duration: 0
@@ -28,7 +28,13 @@ MonoBehaviour:
     MMC: {fileID: 11400000, guid: 62b1bac5059e19a428c2015b6d62f8bc, type: 2}
   AssetTags: []
   GrantedTags: []
-  ApplicationRequiredTags: []
+  ApplicationRequiredTags:
+  - _name: Faction.Enemy
+    _hashCode: -1091112840
+    _shortName: Enemy
+    _ancestorHashCodes: 82bdedf5
+    _ancestorNames:
+    - Faction
   OngoingRequiredTags: []
   RemoveGameplayEffectsWithTags: []
   ApplicationImmunityTags: []

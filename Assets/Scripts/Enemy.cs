@@ -24,26 +24,50 @@ public class Enemy : MonoBehaviour
     private void OnDestroy()
     {
         GameRunner.Instance.UnregisterEnemy(this);
+        _asc.AttrSet<AS_Fight>().HP.UnregisterPostBaseValueChange(OnHpChange);
     }
 
     // Update is called once per frame
     void Update()
     {
         if (Chase()) Boom();
+        
+        // Enemy朝向始终面向玩家
+        if(_player != null)
+        {
+            var dir = (Vector2)(_player.transform.position - transform.position);
+            dir.Normalize();
+            transform.up = dir;
+        }
     }
 
     public void Init(Player player)
     {
         _player = player;
         // 初始化属性
+        _asc.InitWithPreset(1);
         InitAttributes();
     }
 
     void InitAttributes()
     {
-        // TODO  初始化属性 
+        // 初始化属性 
+        _asc.AttrSet<AS_Fight>().InitHP(10);
+        _asc.AttrSet<AS_Fight>().InitAtk(20);
+        _asc.AttrSet<AS_Fight>().InitSpeed(5);
+        
+        _asc.AttrSet<AS_Fight>().HP.RegisterPostBaseValueChange(OnHpChange);
     }
-    
+
+    private void OnHpChange(AttributeBase attributeBase, float oldValue, float newValue)
+    {
+        if (newValue <= 0)
+        {
+            // 死亡
+            Destroy(gameObject);
+        }
+    }
+
     bool Chase()
     {
         // 如果玩家为空，返回 false
@@ -51,7 +75,7 @@ public class Enemy : MonoBehaviour
         
         // 追击
         var delta = (Vector2)(_player.transform.position - transform.position);
-        var speed = 2f; // 替换为
+        var speed = _asc.AttrSet<AS_Fight>().Speed.CurrentValue; 
         _rb.velocity = delta.normalized * speed;
         
         // 计算玩家与自己的距离
