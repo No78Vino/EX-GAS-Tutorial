@@ -71,6 +71,12 @@ public class GameRunner: MonoBehaviour
         GameplayAbilitySystem.GAS.Pause();
     }
 
+    public void AddScore(int addScore=10)
+    {
+        _score += addScore;
+        UIManager.Instance.SetScore(_score);
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = new Color(0f,0.5f,0,0.5f);

@@ -64,7 +64,7 @@ public class Enemy : MonoBehaviour
         if (newValue <= 0)
         {
             // 死亡
-            Destroy(gameObject);
+            Die();
         }
     }
 
@@ -86,5 +86,11 @@ public class Enemy : MonoBehaviour
     void Boom()
     {
         // TODO 发动爆炸技能
+    }
+
+    void Die()
+    {
+        GameRunner.Instance.AddScore();
+        Destroy(gameObject);
     }
 }
