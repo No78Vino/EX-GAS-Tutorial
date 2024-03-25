@@ -1,4 +1,3 @@
-using System;
 using GAS.Runtime;
 using UnityEngine;
 
@@ -31,6 +30,7 @@ public class Player : MonoBehaviour
         _input.Player.Sweep.performed -= OnSweep;
         
         _asc.AttrSet<AS_Fight>().HP.UnregisterPostBaseValueChange(OnHpChange);
+        _asc.AbilityContainer.AbilitySpecs()[GAbilityLib.Die.Name].UnregisterEndAbility(OnDie);
     }
 
     // Update is called once per frame
@@ -57,8 +57,15 @@ public class Player : MonoBehaviour
         _asc.AttrSet<AS_Fight>().InitSpeed(8);
         
         _asc.AttrSet<AS_Fight>().HP.RegisterPostBaseValueChange(OnHpChange);
+        _asc.AbilityContainer.AbilitySpecs()[GAbilityLib.Die.Name].RegisterEndAbility(OnDie);
     }
-    
+
+    private void OnDie()
+    {
+        GameRunner.Instance.GameOver();
+        Destroy(gameObject,0.1f);
+    }
+
     void OnActivateMove(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
         var move = context.ReadValue<Vector2>();
@@ -76,7 +83,7 @@ public class Player : MonoBehaviour
     
     void OnFire(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        _asc.TryActivateAbility(GAbilityLib.Fire_Info.Name);
+        _asc.TryActivateAbility(GAbilityLib.Fire.Name);
     }
     
     void OnSweep(UnityEngine.InputSystem.InputAction.CallbackContext context)
@@ -90,8 +97,7 @@ public class Player : MonoBehaviour
         
         if (newValue <= 0)
         {
-            // TODO 死亡
-            // _asc.TryActivateAbility(GAbilityLib.Die_Info.Name);
+            _asc.TryActivateAbility(GAbilityLib.Die.Name);
         }
     }
 }

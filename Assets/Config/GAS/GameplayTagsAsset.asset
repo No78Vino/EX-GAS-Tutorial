@@ -43,6 +43,9 @@ MonoBehaviour:
   - _id: 2
     _name: Ability
     _depth: 0
+  - _id: 20
+    _name: Die
+    _depth: 1
   - _id: 10
     _name: Bomb
     _depth: 1
@@ -55,6 +58,12 @@ MonoBehaviour:
   - _id: 11
     _name: Event
     _depth: 0
+  - _id: 18
+    _name: Ban
+    _depth: 1
+  - _id: 19
+    _name: Move
+    _depth: 2
   - _id: 12
     _name: Moving
     _depth: 1
@@ -118,6 +127,12 @@ MonoBehaviour:
     _shortName: Ability
     _ancestorHashCodes: 
     _ancestorNames: []
+  - _name: Ability.Die
+    _hashCode: 265453460
+    _shortName: Die
+    _ancestorHashCodes: b84ed1e0
+    _ancestorNames:
+    - Ability
   - _name: Ability.Bomb
     _hashCode: -337865218
     _shortName: Bomb
@@ -141,6 +156,19 @@ MonoBehaviour:
     _shortName: Event
     _ancestorHashCodes: 
     _ancestorNames: []
+  - _name: Event.Ban
+    _hashCode: 886515543
+    _shortName: Ban
+    _ancestorHashCodes: 0276cb27
+    _ancestorNames:
+    - Event
+  - _name: Event.Ban.Move
+    _hashCode: -1122116332
+    _shortName: Move
+    _ancestorHashCodes: 0276cb275727d734
+    _ancestorNames:
+    - Event
+    - Event.Ban
   - _name: Event.Moving
     _hashCode: 798883614
     _shortName: Moving

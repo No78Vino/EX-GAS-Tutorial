@@ -23,4 +23,6 @@ MonoBehaviour:
     _ancestorHashCodes: 82bdedf5
     _ancestorNames:
     - Faction
-  BaseAbilities: []
+  BaseAbilities:
+  - {fileID: 11400000, guid: 450e63cee6435584cb2133a6bc5de746, type: 2}
+  - {fileID: 11400000, guid: f8e5264c90ed10441ae4b6a5b2cd8849, type: 2}

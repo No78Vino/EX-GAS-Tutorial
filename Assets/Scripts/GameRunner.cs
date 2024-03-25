@@ -62,7 +62,7 @@ public class GameRunner: MonoBehaviour
         _isRunning = true;
     }
 
-    public void GameOver(bool isWin)
+    public void GameOver()
     {
         _isRunning = false;
         // 显示结算界面

@@ -26,19 +26,39 @@ MonoBehaviour:
     - Ability
   CancelAbilityTags: []
   BlockAbilityTags: []
-  ActivationOwnedTag: []
+  ActivationOwnedTag:
+  - _name: Event.Ban.Move
+    _hashCode: -1122116332
+    _shortName: Move
+    _ancestorHashCodes: 0276cb275727d734
+    _ancestorNames:
+    - Event
+    - Event.Ban
   ActivationRequiredTags: []
   ActivationBlockedTags: []
   manualEndAbility: 0
-  FrameCount: 90
-  DurationalCues: []
+  FrameCount: 87
+  DurationalCues:
+  - trackName: "\u7206\u70B8Cue"
+    clipEvents:
+    - startFrame: 0
+      durationFrame: 85
+      cue: {fileID: 11400000, guid: 42306929aa0e50b48a0b280864517434, type: 2}
+  - trackName: 
+    clipEvents:
+    - startFrame: 0
+      durationFrame: 85
+      cue: {fileID: 11400000, guid: 00fe9c19f0656234798df21dca4c62ce, type: 2}
   InstantCues:
   - trackName: "\u7206\u70B8\u7279\u6548"
-    markEvents: []
+    markEvents:
+    - startFrame: 87
+      cues:
+      - {fileID: 11400000, guid: 68d851729b0e57c4eaa40f1281af23b6, type: 2}
   ReleaseGameplayEffect:
   - trackName: "\u7206\u70B8\u4F24\u5BB3"
     markEvents:
-    - startFrame: 89
+    - startFrame: 87
       jsonTargetCatcher:
         Type: GAS.Runtime.CatchAreaCircle2D
         Data: '{"Owner":{"instanceID":0},"checkLayer":{"serializedVersion":"2","m_Bits":128},"radius":3.0,"offset":{"x":0.0,"y":0.0},"centerType":0}'
