@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9395a0be3e547f48bd1c8320edc6c58, type: 3}
+  m_Name: CD_Sweep
+  m_EditorClassIdentifier: 
+  Name: "Sweep\u51B7\u5374CD"
+  Description: 
+  DurationPolicy: 3
+  Duration: 1
+  Period: 0
+  PeriodExecution: {fileID: 0}
+  GrantedAbilities: []
+  Modifiers: []
+  AssetTags:
+  - _name: CD.Sweep
+    _hashCode: -303359587
+    _shortName: Sweep
+    _ancestorHashCodes: aba22dbc
+    _ancestorNames:
+    - CD
+  GrantedTags:
+  - _name: CD.Sweep
+    _hashCode: -303359587
+    _shortName: Sweep
+    _ancestorHashCodes: aba22dbc
+    _ancestorNames:
+    - CD
+  ApplicationRequiredTags: []
+  OngoingRequiredTags: []
+  RemoveGameplayEffectsWithTags: []
+  ApplicationImmunityTags: []
+  CueOnExecute: []
+  CueDurational:
+  - {fileID: 11400000, guid: 8ca0dd60727b3bd4390dfb66749ac863, type: 2}
+  CueOnAdd: []
+  CueOnRemove: []
+  CueOnActivate: []
+  CueOnDeactivate: []

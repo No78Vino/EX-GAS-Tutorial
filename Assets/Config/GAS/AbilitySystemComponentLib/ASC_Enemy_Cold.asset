@@ -10,20 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85dd2a6201f04545b5a8b020edcb2690, type: 3}
-  m_Name: ASC_Player
+  m_Name: ASC_Enemy_Cold
   m_EditorClassIdentifier: 
-  Name: "\u73A9\u5BB6"
+  Name: "\u9644\u5E26\u51B7\u5374\u7684\u654C\u4EBA"
   Description: 
   AttributeSets:
   - Fight
   BaseTags:
-  - _name: Faction.Player
-    _hashCode: 1030057057
-    _shortName: Player
+  - _name: Faction.Enemy
+    _hashCode: -1091112840
+    _shortName: Enemy
     _ancestorHashCodes: 82bdedf5
     _ancestorNames:
     - Faction
   BaseAbilities:
-  - {fileID: 11400000, guid: 72b4e187390f57645b9a0b76aed8beff, type: 2}
+  - {fileID: 11400000, guid: 3be8344250abcfc43b66f349a24d0659, type: 2}
   - {fileID: 11400000, guid: f8e5264c90ed10441ae4b6a5b2cd8849, type: 2}
-  - {fileID: 11400000, guid: 79ad29262df19944b9ad8b240a03fad1, type: 2}

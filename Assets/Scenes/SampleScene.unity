@@ -615,7 +615,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u603B\u5206\uFF1A\uFF1F\uFF1F\uFF1F\uFF1F"
+  m_Text: "\u70B9\u51FB\u4E0B\u65B9\u6309\u94AE\uFF0C\u5F00\u59CB\u6E38\u620F"
 --- !u!222 &826257411
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1574,6 +1574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabPlayer: {fileID: 4120969653935037157, guid: bea5277f00b9e5b4896550879b226f32, type: 3}
   prefabEnemy: {fileID: 1248872553885445225, guid: 968d43c713c8acd41b978265e13bd318, type: 3}
+  prefabEnemyCold: {fileID: 1248872553885445225, guid: 7424a9d74015e634ebdf500db2c95e14, type: 3}
   _playerSpawnPosition: {x: 0, y: 0, z: 0}
   enemySpawnRect:
     serializedVersion: 2
@@ -1666,7 +1667,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u518D\u6765\u4E00\u5C40"
+  m_Text: "\u5F00\u59CB\u6E38\u620F"
 --- !u!222 &1398240625
 CanvasRenderer:
   m_ObjectHideFlags: 0

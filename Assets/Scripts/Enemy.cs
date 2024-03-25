@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     private const float BoomDistance = 2.5f;
-    private AbilitySystemComponent _asc;
+    protected AbilitySystemComponent _asc;
     private Player _player;
     private Rigidbody2D _rb;
 
@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
     {
         GameRunner.Instance.UnregisterEnemy(this);
         _asc.AttrSet<AS_Fight>().HP.UnregisterPostBaseValueChange(OnHpChange);
-        _asc.AbilityContainer.AbilitySpecs()[GAbilityLib.Bomb.Name].UnregisterEndAbility(OnBombEnd);
+        _asc.AbilityContainer.AbilitySpecs()[BombSkillName].UnregisterEndAbility(OnBombEnd);
         _asc.AbilityContainer.AbilitySpecs()[GAbilityLib.Die.Name].UnregisterEndAbility(OnBombEnd);
     }
 
@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour
         _asc.InitWithPreset(1);
         InitAttributes();
 
-        _asc.AbilityContainer.AbilitySpecs()[GAbilityLib.Bomb.Name].RegisterEndAbility(OnBombEnd);
+        _asc.AbilityContainer.AbilitySpecs()[BombSkillName].RegisterEndAbility(OnBombEnd);
         _asc.AbilityContainer.AbilitySpecs()[GAbilityLib.Die.Name].RegisterEndAbility(OnBombEnd);
     }
 
@@ -86,9 +86,11 @@ public class Enemy : MonoBehaviour
         return distance < BoomDistance;
     }
 
+    protected virtual string BombSkillName => GAbilityLib.Bomb.Name;
+    
     private void Boom()
     {
-        _asc.TryActivateAbility(GAbilityLib.Bomb.Name);
+        _asc.TryActivateAbility(BombSkillName);
     }
 
     private void Die()

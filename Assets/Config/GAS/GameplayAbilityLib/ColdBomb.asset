@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d763af469c524557946c477b9bea3a46, type: 3}
-  m_Name: Bomb
+  m_Name: ColdBomb
   m_EditorClassIdentifier: 
-  UniqueName: Bomb
-  Description: "\u7206\u70B8"
+  UniqueName: ColdBomb
+  Description: 
   Cost: {fileID: 0}
   Cooldown: {fileID: 0}
   CooldownTime: 0
@@ -37,32 +37,33 @@ MonoBehaviour:
   ActivationRequiredTags: []
   ActivationBlockedTags: []
   manualEndAbility: 0
-  FrameCount: 87
+  FrameCount: 85
   DurationalCues:
-  - trackName: "\u7206\u70B8Cue"
+  - trackName: 
     clipEvents:
     - startFrame: 0
-      durationFrame: 85
+      durationFrame: 83
       cue: {fileID: 11400000, guid: 42306929aa0e50b48a0b280864517434, type: 2}
   - trackName: 
     clipEvents:
     - startFrame: 0
-      durationFrame: 85
+      durationFrame: 83
       cue: {fileID: 11400000, guid: 00fe9c19f0656234798df21dca4c62ce, type: 2}
   InstantCues:
-  - trackName: "\u7206\u70B8\u7279\u6548"
+  - trackName: 
     markEvents:
-    - startFrame: 87
+    - startFrame: 85
       cues:
       - {fileID: 11400000, guid: 68d851729b0e57c4eaa40f1281af23b6, type: 2}
   ReleaseGameplayEffect:
-  - trackName: "\u7206\u70B8\u4F24\u5BB3"
+  - trackName: 
     markEvents:
-    - startFrame: 87
+    - startFrame: 85
       jsonTargetCatcher:
         Type: GAS.Runtime.CatchAreaCircle2D
         Data: '{"Owner":{"instanceID":0},"checkLayer":{"serializedVersion":"2","m_Bits":128},"radius":3.0,"offset":{"x":0.0,"y":0.0},"centerType":0}'
       gameplayEffectAssets:
+      - {fileID: 11400000, guid: eb2725e9129f2384bafc4eed3a34290d, type: 2}
       - {fileID: 11400000, guid: 6e43c7753d3e2ec4ca321bea5479246b, type: 2}
   BuffGameplayEffects: []
   InstantTasks: []

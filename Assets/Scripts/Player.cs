@@ -88,7 +88,7 @@ public class Player : MonoBehaviour
     
     void OnSweep(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        // TODO 横扫
+        _asc.TryActivateAbility(GAbilityLib.Sweep.Name);
     }
     
     void OnHpChange(AttributeBase attributeBase,float oldValue, float newValue)

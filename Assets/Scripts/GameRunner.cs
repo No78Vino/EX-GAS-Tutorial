@@ -9,9 +9,10 @@ public class GameRunner: MonoBehaviour
 
     [SerializeField] private GameObject prefabPlayer;
     [SerializeField] private GameObject prefabEnemy;
+    [SerializeField] private GameObject prefabEnemyCold;
 
     private bool _isRunning;
-    private const float EnemySpawnInterval = 3f;
+    private const float EnemySpawnInterval = 1.5f;
     float _enemySpawnCounter = 0f;
 
     private int _score = 0;
@@ -108,6 +109,7 @@ public class GameRunner: MonoBehaviour
     
     #region Enemy Managment
 
+    private int _enemyCount = 0;
     private List<Enemy> _enemies = new List<Enemy>();
     [SerializeField] private Rect enemySpawnRect;
     
@@ -120,17 +122,19 @@ public class GameRunner: MonoBehaviour
     {
         _enemies.Remove(enemy);
     }
-
+    
     private void SpawnEnemy()
     {
         var position = new Vector3(
             UnityEngine.Random.Range(enemySpawnRect.xMin, enemySpawnRect.xMax),
             UnityEngine.Random.Range(enemySpawnRect.yMin, enemySpawnRect.yMax),
             0);
-        var go = Instantiate(prefabEnemy);
+        var go = Instantiate(_enemyCount % 4 == 3 ? prefabEnemyCold : prefabEnemy);
         go.transform.position = position;
         var enemy = go.GetComponent<Enemy>();
         enemy.Init(_player);
+
+        _enemyCount++;
     }
 
     private void DestroyEnemies()
