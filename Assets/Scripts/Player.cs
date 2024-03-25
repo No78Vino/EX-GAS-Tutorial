@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
     private void OnDie()
     {
         GameRunner.Instance.GameOver();
-        Destroy(gameObject,0.1f);
+        Destroy(gameObject);
     }
 
     void OnActivateMove(UnityEngine.InputSystem.InputAction.CallbackContext context)

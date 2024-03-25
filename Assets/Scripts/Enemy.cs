@@ -50,7 +50,7 @@ public class Enemy : MonoBehaviour
 
     private void OnBombEnd()
     {
-        Destroy(gameObject,0.01f);
+        Destroy(gameObject);
     }
 
     private void InitAttributes()
