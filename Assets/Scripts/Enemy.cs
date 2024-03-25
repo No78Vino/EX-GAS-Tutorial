@@ -70,12 +70,10 @@ public class Enemy : MonoBehaviour
 
     private bool Chase()
     {
-        if (_player == null || _asc.AttrSet<AS_Fight>().HP.CurrentValue <= 0) return false;
-
-        // 如果持有Tag：Event.Ban.Move ，则不可移动
-        if (_asc.HasTag(GTagLib.Event_Ban_Move))
+        if (_player == null ||
+            _asc.AttrSet<AS_Fight>().HP.CurrentValue <= 0 ||
+            _asc.HasTag(GTagLib.Event_Ban_Move))
         {
-            _rb.velocity = Vector2.zero;
             return false;
         }
         
