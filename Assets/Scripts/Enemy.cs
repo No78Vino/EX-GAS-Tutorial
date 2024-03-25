@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     private const float BoomDistance = 2.5f;
-    protected AbilitySystemComponent _asc;
+    private AbilitySystemComponent _asc;
     private Player _player;
     private Rigidbody2D _rb;
 
