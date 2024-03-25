@@ -74,6 +74,7 @@ public class Enemy : MonoBehaviour
             _asc.AttrSet<AS_Fight>().HP.CurrentValue <= 0 ||
             _asc.HasTag(GTagLib.Event_Ban_Move))
         {
+            _rb.velocity =Vector2.zero;
             return false;
         }
         
