@@ -48,7 +48,7 @@ namespace GAS.Cue
 
         public override void OnRemove()
         {
-            Object.Destroy(_visualization.gameObject);
+            if(_visualization.gameObject) Object.Destroy(_visualization.gameObject);
         }
 
         public override void OnGameplayEffectActivate()

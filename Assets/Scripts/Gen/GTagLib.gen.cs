@@ -11,10 +11,8 @@ public static class GTagLib
     public static GameplayTag Faction_Player { get;} = new GameplayTag("Faction.Player");
     public static GameplayTag Faction_Enemy { get;} = new GameplayTag("Faction.Enemy");
     public static GameplayTag State { get;} = new GameplayTag("State");
-    public static GameplayTag State_Buff { get;} = new GameplayTag("State.Buff");
     public static GameplayTag State_Debuff { get;} = new GameplayTag("State.Debuff");
     public static GameplayTag State_Debuff_Cold { get;} = new GameplayTag("State.Debuff.Cold");
-    public static GameplayTag State_Debuff_Burning { get;} = new GameplayTag("State.Debuff.Burning");
     public static GameplayTag Ability { get;} = new GameplayTag("Ability");
     public static GameplayTag Ability_Die { get;} = new GameplayTag("Ability.Die");
     public static GameplayTag Ability_Bomb { get;} = new GameplayTag("Ability.Bomb");
@@ -33,10 +31,8 @@ public static class GTagLib
          ["Faction.Player"] = Faction_Player,
          ["Faction.Enemy"] = Faction_Enemy,
          ["State"] = State,
-         ["State.Buff"] = State_Buff,
          ["State.Debuff"] = State_Debuff,
          ["State.Debuff.Cold"] = State_Debuff_Cold,
-         ["State.Debuff.Burning"] = State_Debuff_Burning,
          ["Ability"] = Ability,
          ["Ability.Die"] = Ability_Die,
          ["Ability.Bomb"] = Ability_Bomb,

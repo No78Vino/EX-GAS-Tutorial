@@ -17,7 +17,13 @@ MonoBehaviour:
   Cost: {fileID: 0}
   Cooldown: {fileID: 0}
   CooldownTime: 0
-  AssetTag: []
+  AssetTag:
+  - _name: Ability.Die
+    _hashCode: 265453460
+    _shortName: Die
+    _ancestorHashCodes: b84ed1e0
+    _ancestorNames:
+    - Ability
   CancelAbilityTags:
   - _name: Ability.Bomb
     _hashCode: -337865218
@@ -38,7 +44,14 @@ MonoBehaviour:
     _ancestorNames:
     - Ability
   BlockAbilityTags: []
-  ActivationOwnedTag: []
+  ActivationOwnedTag:
+  - _name: Event.Ban.Move
+    _hashCode: -1122116332
+    _shortName: Move
+    _ancestorHashCodes: 0276cb275727d734
+    _ancestorNames:
+    - Event
+    - Event.Ban
   ActivationRequiredTags: []
   ActivationBlockedTags: []
   manualEndAbility: 0

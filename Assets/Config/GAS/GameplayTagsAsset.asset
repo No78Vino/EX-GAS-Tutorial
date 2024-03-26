@@ -28,17 +28,11 @@ MonoBehaviour:
   - _id: 3
     _name: State
     _depth: 0
-  - _id: 5
-    _name: Buff
-    _depth: 1
   - _id: 4
     _name: Debuff
     _depth: 1
   - _id: 7
     _name: Cold
-    _depth: 2
-  - _id: 6
-    _name: Burning
     _depth: 2
   - _id: 2
     _name: Ability
@@ -96,12 +90,6 @@ MonoBehaviour:
     _shortName: State
     _ancestorHashCodes: 
     _ancestorNames: []
-  - _name: State.Buff
-    _hashCode: 743086286
-    _shortName: Buff
-    _ancestorHashCodes: 4b461665
-    _ancestorNames:
-    - State
   - _name: State.Debuff
     _hashCode: -1227811357
     _shortName: Debuff
@@ -111,13 +99,6 @@ MonoBehaviour:
   - _name: State.Debuff.Cold
     _hashCode: 202012689
     _shortName: Cold
-    _ancestorHashCodes: 4b461665e315d1b6
-    _ancestorNames:
-    - State
-    - State.Debuff
-  - _name: State.Debuff.Burning
-    _hashCode: -357927080
-    _shortName: Burning
     _ancestorHashCodes: 4b461665e315d1b6
     _ancestorNames:
     - State
