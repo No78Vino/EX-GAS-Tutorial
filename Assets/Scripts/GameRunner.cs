@@ -1,21 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using GAS;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class GameRunner: MonoBehaviour
+public class GameRunner : MonoBehaviour
 {
-    public static GameRunner Instance { get; private set; }
-
+    [SerializeField] private float enemySpawnInterval = 1.5f;
     [SerializeField] private GameObject prefabPlayer;
     [SerializeField] private GameObject prefabEnemy;
     [SerializeField] private GameObject prefabEnemyCold;
+    private float _enemySpawnCounter;
 
     private bool _isRunning;
-    private const float EnemySpawnInterval = 1.5f;
-    float _enemySpawnCounter = 0f;
 
-    private int _score = 0;
+    private int _score;
+    public static GameRunner Instance { get; private set; }
+
     private void Awake()
     {
         Instance = this;
@@ -31,7 +31,7 @@ public class GameRunner: MonoBehaviour
         if (_isRunning)
         {
             _enemySpawnCounter += Time.deltaTime;
-            if (_enemySpawnCounter >= EnemySpawnInterval)
+            if (_enemySpawnCounter >= enemySpawnInterval)
             {
                 _enemySpawnCounter = 0;
                 SpawnEnemy();
@@ -39,11 +39,15 @@ public class GameRunner: MonoBehaviour
         }
     }
 
-    public void WaitForFirstGameStart()
+    private void OnDrawGizmos()
     {
-        // 显示开始界面
+        Gizmos.color = new Color(0f, 0.5f, 0, 0.5f);
+        Gizmos.DrawCube(enemySpawnRect.center, enemySpawnRect.size);
+    }
+
+    private void WaitForFirstGameStart()
+    {
         UIManager.Instance.ShowResultWindow();
-        // 暂停GAS
     }
 
     public void StartGame()
@@ -55,7 +59,7 @@ public class GameRunner: MonoBehaviour
         UIManager.Instance.SetScore(_score);
         // 恢复GAS运行
         GameplayAbilitySystem.GAS.Unpause();
-        
+
         // 重置Player和Enemy
         DestroyPlayer();
         DestroyEnemies();
@@ -72,23 +76,18 @@ public class GameRunner: MonoBehaviour
         GameplayAbilitySystem.GAS.Pause();
     }
 
-    public void AddScore(int addScore=10)
+    public void AddScore(int addScore = 10)
     {
         _score += addScore;
         UIManager.Instance.SetScore(_score);
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = new Color(0f,0.5f,0,0.5f);
-        Gizmos.DrawCube(enemySpawnRect.center, enemySpawnRect.size);
     }
 
     #region Player Management
 
     private Player _player;
     [SerializeField] private Vector3 _playerSpawnPosition = Vector3.zero;
-    public void CreatePlayer()
+
+    private void CreatePlayer()
     {
         if (_player != null) return;
         var go = Instantiate(prefabPlayer);
@@ -96,8 +95,8 @@ public class GameRunner: MonoBehaviour
         _player = go.GetComponent<Player>();
         _player.Init();
     }
-    
-    public void DestroyPlayer()
+
+    private void DestroyPlayer()
     {
         if (_player == null) return;
         Destroy(_player.gameObject);
@@ -106,28 +105,28 @@ public class GameRunner: MonoBehaviour
 
     #endregion
 
-    
+
     #region Enemy Managment
 
-    private int _enemyCount = 0;
-    private List<Enemy> _enemies = new List<Enemy>();
+    private int _enemyCount;
+    private readonly List<Enemy> _enemies = new();
     [SerializeField] private Rect enemySpawnRect;
-    
+
     public void RegisterEnemy(Enemy enemy)
     {
         _enemies.Add(enemy);
     }
-    
+
     public void UnregisterEnemy(Enemy enemy)
     {
         _enemies.Remove(enemy);
     }
-    
+
     private void SpawnEnemy()
     {
         var position = new Vector3(
-            UnityEngine.Random.Range(enemySpawnRect.xMin, enemySpawnRect.xMax),
-            UnityEngine.Random.Range(enemySpawnRect.yMin, enemySpawnRect.yMax),
+            Random.Range(enemySpawnRect.xMin, enemySpawnRect.xMax),
+            Random.Range(enemySpawnRect.yMin, enemySpawnRect.yMax),
             0);
         var go = Instantiate(_enemyCount % 4 == 3 ? prefabEnemyCold : prefabEnemy);
         go.transform.position = position;
@@ -139,12 +138,9 @@ public class GameRunner: MonoBehaviour
 
     private void DestroyEnemies()
     {
-        foreach (var enemy in _enemies)
-        {
-            Destroy(enemy.gameObject);
-        }
+        foreach (var enemy in _enemies) Destroy(enemy.gameObject);
         _enemies.Clear();
     }
-    
+
     #endregion
 }

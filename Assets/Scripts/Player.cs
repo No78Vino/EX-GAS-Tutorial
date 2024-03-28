@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     private PlayerInput _input;
     private AbilitySystemComponent _asc;
     
-     void Awake()
+    void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
         _asc = GetComponent<AbilitySystemComponent>();

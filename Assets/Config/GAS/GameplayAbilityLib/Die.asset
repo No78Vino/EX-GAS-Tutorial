@@ -59,8 +59,8 @@ MonoBehaviour:
   DurationalCues:
   - trackName: 
     clipEvents:
-    - startFrame: 0
-      durationFrame: 15
+    - startFrame: 1
+      durationFrame: 13
       cue: {fileID: 11400000, guid: 0e75cb7da05ddca4ba1aefb2b0e9fdb1, type: 2}
   InstantCues: []
   ReleaseGameplayEffect: []

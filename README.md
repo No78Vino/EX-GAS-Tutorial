@@ -157,12 +157,11 @@ public class UIManager : MonoBehaviour
 UI的内容先告一段落，后续还会沿着案例开发顺序对UIManager进行补充。
 
 ---
-## 6.GameManager && Launcher
-### 6.1 GameManager
-GameManager是统筹游戏运行的管理类，一般会比较复杂。
-但是鉴于本案例比较简单，所以GameManager的逻辑会比较直接，暴力。（OMO）
+## 6.GameRunner
+GameRunner是统筹游戏运行的管理类，一般会比较复杂。
+但是鉴于本案例比较简单，所以GameRunner的逻辑会比较直接，暴力。（OMO）
 
-还是和UIManager一样在Assets/Scripts目录下创建脚本GameManager，但GameManager不继承MonoBehavior。
+还是和UIManager一样在Assets/Scripts目录下创建脚本GameManager
 - GameManager也为了方便调用，我们为他添加静态单例。
   - ```
     private static GameManager _intance;

@@ -15,5 +15,8 @@ MonoBehaviour:
   Warning_DuplicatedAttribute: 
   attributes:
   - Name: HP
+    Comment: 
   - Name: Speed
+    Comment: 
   - Name: Atk
+    Comment: 

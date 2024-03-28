@@ -930,7 +930,7 @@ GameObject:
   - component: {fileID: 1037881466}
   - component: {fileID: 1037881465}
   m_Layer: 5
-  m_Name: ButtonRetry
+  m_Name: ButtonPlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1002,7 +1002,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 370956313}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: Retry
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1572,6 +1572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 192b09a70c5d46b9b3491df18e633cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemySpawnInterval: 1
   prefabPlayer: {fileID: 4120969653935037157, guid: bea5277f00b9e5b4896550879b226f32, type: 3}
   prefabEnemy: {fileID: 1248872553885445225, guid: 968d43c713c8acd41b978265e13bd318, type: 3}
   prefabEnemyCold: {fileID: 1248872553885445225, guid: 7424a9d74015e634ebdf500db2c95e14, type: 3}

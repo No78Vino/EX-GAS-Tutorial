@@ -25,7 +25,7 @@ MonoBehaviour:
     AttributeShortName: Speed
     ModiferMagnitude: 0.5
     Operation: 1
-    MMC: {fileID: 11400000, guid: cee4f4bb6d0df8545bc5a254f546ff38, type: 2}
+    MMC: {fileID: 0}
   AssetTags:
   - _name: State.Debuff.Cold
     _hashCode: 202012689
@@ -42,7 +42,13 @@ MonoBehaviour:
     _ancestorNames:
     - State
     - State.Debuff
-  ApplicationRequiredTags: []
+  ApplicationRequiredTags:
+  - _name: Faction.Player
+    _hashCode: 1030057057
+    _shortName: Player
+    _ancestorHashCodes: 82bdedf5
+    _ancestorNames:
+    - Faction
   OngoingRequiredTags: []
   RemoveGameplayEffectsWithTags: []
   ApplicationImmunityTags: []

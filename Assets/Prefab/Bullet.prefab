@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7343035916638848867}
-  - component: {fileID: 4935730846762519046}
-  - component: {fileID: 182702634195536651}
   - component: {fileID: 296035906118466706}
   - component: {fileID: 592863020272087347}
   - component: {fileID: 5575930213436972284}
+  - component: {fileID: 182702634195536651}
+  - component: {fileID: 4935730846762519046}
   m_Layer: 6
   m_Name: Bullet
   m_TagString: Untagged
@@ -36,32 +36,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4935730846762519046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 214978311588649852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 576e1bd028628cc49a0d1ee8b7eb51f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  geBulletDamage: {fileID: 11400000, guid: 1b8281b954f384044b87ab1b5dcb2bb4, type: 2}
---- !u!114 &182702634195536651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 214978311588649852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 183fdb9275244e99bf882bd2e9cb85d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  preset: {fileID: 11400000, guid: d9fe631eef78d1b4c9f11446f927c99c, type: 2}
 --- !u!212 &296035906118466706
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -176,3 +150,29 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &182702634195536651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214978311588649852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 183fdb9275244e99bf882bd2e9cb85d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preset: {fileID: 11400000, guid: d9fe631eef78d1b4c9f11446f927c99c, type: 2}
+--- !u!114 &4935730846762519046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214978311588649852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 576e1bd028628cc49a0d1ee8b7eb51f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  geBulletDamage: {fileID: 11400000, guid: 1b8281b954f384044b87ab1b5dcb2bb4, type: 2}

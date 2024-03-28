@@ -42,9 +42,8 @@ public class UIManager : MonoBehaviour
         resultWindow.SetActive(false);
     }
 
-    public void Retry()
+    public void Play()
     {
-        // 重置游戏状态
         GameRunner.Instance.StartGame();
     }
 }
