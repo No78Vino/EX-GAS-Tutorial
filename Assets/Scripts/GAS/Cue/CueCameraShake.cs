@@ -27,7 +27,7 @@ public class CueCameraShakeSpec : GameplayCueInstantSpec<CueCameraShake>
         CameraShake(cue.shakePower, cue.shakeDuration);
     }
 
-    private async Task CameraShake(float magnitude, float duration)
+    private async void CameraShake(float magnitude, float duration)
     {
         if (Camera.main == null) return;
         var transform = Camera.main.transform;
