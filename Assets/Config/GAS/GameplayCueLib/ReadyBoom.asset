@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RequiredTags: []
   ImmunityTags: []
-  period: 0.1
+  period: 0.075
   zoomScale: 0.5
